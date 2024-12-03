@@ -22,5 +22,3 @@ for nombre in nombres:
 # Usando enumerate() para obtener índices y valores
 for indice, valor in enumerate(nombres):
     print(f"Índice {indice}: {valor}")
-
-

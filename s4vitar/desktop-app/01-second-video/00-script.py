@@ -7,7 +7,7 @@ import tkinter as tk
 root = tk.Tk()
 # Create the main window (also known as the root window) of the GUI application.
 
-root.title("Grid Method")
+root.title("place Method")
 # Set the title of the main window to "Grid Method".
 
 label1 = tk.Label(root, text="My first label", bg="yellow")

@@ -27,6 +27,3 @@ print(colores)  # ["rojo", "naranja", "morado", "negro", "blanco"]
 
 colores.clear()
 print(colores)  # []
-
-
-# 
