@@ -1,6 +1,9 @@
 # Agregar o actualizar elementos
 
-persona = {"nombre": "Ana"}
+persona = {
+    "nombre": "Ana"
+}
+
 persona["edad"] = 30  # Agregar una nueva clave-valor
 persona["nombre"] = "Ana María"  # Actualizar un valor
 print(persona)  # Salida: {'nombre': 'Ana María', 'edad': 30}
