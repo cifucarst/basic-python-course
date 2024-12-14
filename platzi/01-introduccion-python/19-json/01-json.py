@@ -14,7 +14,7 @@ datos_python = {
 # Convertir a JSON (serialización)
 datos_json = json.dumps(datos_python, indent=4)
 print(datos_json)
-
+print(dir(json))
 
 # salida json
 {
