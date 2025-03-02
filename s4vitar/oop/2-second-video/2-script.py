@@ -1,23 +1,3 @@
-#!/usr/bin/env python3
-
-# class Book():
-#     def __init__(self,title,author,price,bestseller_value = 5000) -> None:
-#         self.title = title
-#         self.author = author
-#         self.price = price
-#         self.bestseller_value = bestseller_value
-
-#     @staticmethod
-#     def is_best_seller(instance,total_sales):
-#         return total_sales > instance.bestseller_value
-
-
-# my_book = Book("How to be a real Lammer","Jhon Conor",17.5)
-# print(Book.is_best_seller(my_book,7000))
-
-
-######################################################################################
-
 # This class defines a Book object with its attributes.
 
 class Book():

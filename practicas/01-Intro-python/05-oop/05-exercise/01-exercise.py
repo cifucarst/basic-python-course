@@ -41,106 +41,131 @@ class Product:
         self.stock = stock
 
     def reduce_stock(self, quantity):
-        if isinstance(quantity, int) and quantity > 0  and quantity <= self.stock:
+        if self.stock >= quantity:
             self.stock -= quantity
-            print(f'Cantidad de {self.name} en stock es: {self.stock}')
-    
+            return True
+        else:
+            print(f"No hay suficiente stock para {self.name}. Stock disponible: {self.stock}")
+            return False
+
     def __str__(self):
-        return f'Producto: {self.name}, precio ${self.price}, cantidad {self.stock}'
+        return f"{self.name}: ${self.price:.2f} (Stock: {self.stock})"
 
 
 class Customer:
-    def __init__(self, name: str):
-        self.name = name 
+    def __init__(self, name):
+        self.name = name
         self.cart = []
 
-    def add_to_cart(self, product: Product):
-        if isinstance(product, Product):
-            self.cart.append(product)
-       
+    def add_to_cart(self, product, quantity):
+        self.cart.append((product, quantity))
+
     def checkout(self):
-        if len(self.cart) > 0:
-            print('Productos agregados al carrito de compras')
-            for product in self.cart:
-                print(product)
-        
-    def __str__(self):
-        return f'El cliente {self.name}, {"tiene" if self.cart else "no tiene"} productos agregados'
+        total = 0
+        print(f"\n--- Factura de {self.name} ---")
+        for product, quantity in self.cart:
+            subtotal = product.price * quantity
+            print(f"{product.name} x{quantity}: ${subtotal:.2f}")
+            total += subtotal
+        print(f"Total: ${total:.2f}\n")
+        self.cart = []  # Vaciar el carrito después de la compra
+
 
 class Store:
     def __init__(self):
-        self.customers = []
         self.products = []
+        self.customers = []
 
-    def add_product(self, product: Product): 
-        # Agrega productos al inventario.
+    def add_product(self, product):
         self.products.append(product)
-        print(f'producto {product.name} con {product.stock}, agregado al inventario')
 
-    def list_products(self): 
-        # Muestra los productos disponibles.
-        if len(self.products) > 0:
+    def list_products(self):
+        if not self.products:
+            print("No hay productos disponibles.")
+        else:
+            print("\n--- Productos Disponibles ---")
             for product in self.products:
                 print(product)
 
-
-    def add_customer(self, customer: Customer): 
-        # Registra nuevos clientes.
+    def add_customer(self, customer):
         self.customers.append(customer)
-        print(f'{customer.name} agregado correctamente.')
 
-    def list_customers(self):
-        if not self.customers:
-            print('❌ Aún no hay clientes agregados a la tienda.')
-            return
-        print('Clientes en la tienda:')
+    def find_product(self, name):
+        for product in self.products:
+            if product.name.lower() == name.lower():
+                return product
+        return None
+
+    def find_customer_by_name(self, name):
         for customer in self.customers:
-            print(f'✅ {customer}')
-    
-    def find_product(name): 
-        # Busca un producto por nombre.
-        pass
-            
-    def sell_product(customer_name, product_name, quantity): 
-        # Gestiona la venta.
-        pass
+            if customer.name.lower() == name.lower():
+                return customer
+        return None
+
+    def sell_product(self, customer_name, product_name, quantity):
+        customer = self.find_customer_by_name(customer_name)
+        product = self.find_product(product_name)
+
+        if not customer:
+            print(f"Cliente '{customer_name}' no encontrado.")
+            return
+        if not product:
+            print(f"Producto '{product_name}' no encontrado.")
+            return
+        if product.reduce_stock(quantity):
+            customer.add_to_cart(product, quantity)
+            print(f"{quantity} unidad(es) de {product.name} agregadas al carrito de {customer.name}.")
+        else:
+            print(f"No se pudo agregar {product_name} al carrito de {customer_name}.")
 
 
-# Interfaz Interactiva:
+# Crear una instancia de la tienda
+store = Store()
 
-# Crea un menú que permita:
+# Agregar productos de ejemplo
+store.add_product(Product("Manzana", 1.5, 10))
+store.add_product(Product("Banana", 0.8, 5))
+store.add_product(Product("Naranja", 1.2, 8))
 
-    # Registrar nuevos clientes.
-    # Listar productos disponibles.
-    # Agregar productos al carrito de un cliente.
-    # Realizar el pago del carrito.
-    # Agregar o eliminar productos del inventario.
-
+# Menú interactivo
 while True:
-    store = Store()
-    print("""
-        Bienvenido a tu tienda virtual favorita.
-        
-            1 - Registrar nuevos clientes.
-            2 - Listar clientes
-            3 - Listar productos disponibles.
-            4 - Agregar productos al carrito de un cliente.
-            5 - Realizar el pago del carrito.
-            6 - Agregar o eliminar productos del inventario.
-            7 - salir
-          
-""")
-    
-    opcion = int(input('Elige una opcion (del 1 al 6): '))
+    print("\n--- Tienda Virtual ---")
+    print("1. Registrar nuevo cliente")
+    print("2. Listar productos")
+    print("3. Agregar producto al carrito")
+    print("4. Realizar pago")
+    print("5. Salir")
+    option = input("Seleccione una opción: ")
 
-    if opcion == 1:
-        name = input('Escribe tu nombre: ')
-        user = Customer(name)
-        store.add_customer(user)
-    elif opcion == 2:
-        store.list_customers()
-    elif opcion == 7:
-        print('Gracias por visitar esta gran tienda, vuelva cuando quieras!')
+    if option == "1":
+        name = input("Ingrese el nombre del cliente: ").strip()
+        if store.find_customer_by_name(name):
+            print("Este cliente ya está registrado.")
+        else:
+            store.add_customer(Customer(name))
+            print(f"Cliente '{name}' registrado con éxito.")
+    elif option == "2":
+        store.list_products()
+    elif option == "3":
+        customer_name = input("Ingrese el nombre del cliente: ").strip()
+        product_name = input("Ingrese el nombre del producto: ").strip()
+        try:
+            quantity = int(input("Ingrese la cantidad: "))
+            if quantity <= 0:
+                print("La cantidad debe ser un número positivo.")
+            else:
+                store.sell_product(customer_name, product_name, quantity)
+        except ValueError:
+            print("Debe ingresar un número válido para la cantidad.")
+    elif option == "4":
+        customer_name = input("Ingrese el nombre del cliente: ").strip()
+        customer = store.find_customer_by_name(customer_name)
+        if customer:
+            customer.checkout()
+        else:
+            print("Cliente no encontrado.")
+    elif option == "5":
+        print("Gracias por usar la Tienda Virtual. ¡Hasta pronto!")
         break
     else:
-        print('Opcion no valida')
+        print("Opción inválida. Intente nuevamente.")

@@ -55,7 +55,3 @@ print(f"The list after removing port 87 is: {my_ports}")
 # Reverse the order of the list using the reverse() method
 my_ports.reverse()
 print(f"The reversed list of ports is: {my_ports}")
-
-
-
-

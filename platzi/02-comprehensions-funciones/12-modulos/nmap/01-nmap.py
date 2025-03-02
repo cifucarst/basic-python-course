@@ -8,3 +8,4 @@ import nmap
 
 # Crear una instancia del escáner
 scanner = nmap.PortScanner()
+print(dir(scanner))

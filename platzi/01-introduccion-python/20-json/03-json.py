@@ -9,7 +9,7 @@ respuesta = requests.get(url)
 datos = respuesta.json()
 print(datos)
 
-
+import json
 
 # Almacenamiento de configuraciones: 
 # Los archivos JSON se utilizan frecuentemente para guardar configuraciones de aplicaciones.
