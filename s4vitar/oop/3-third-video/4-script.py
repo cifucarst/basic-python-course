@@ -17,8 +17,8 @@ class Students:
         Initializes the student's name and age.
 
         Args:
-            nombre: The student's name.
-            edad: The student's age.
+            name: The student's name.
+            age: The student's age.
         """
         self.name = name
         self.age = age
@@ -32,7 +32,7 @@ class Students:
         Returns True if the given age is greater than or equal to 18, False otherwise.
 
         Args:
-            edad: The student's age.
+            age: The student's age.
 
         Returns:
             True if the student is of legal age, False otherwise.

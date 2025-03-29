@@ -4,7 +4,7 @@
 
 #     Solicite al usuario dos números (pueden ser enteros o decimales).
 #     Intercambie los valores de las variables y muestre el resultado.
-#         Por ejemplo, si el usuario introduce a=5a=5 y b=3b=3, al final a=3a=3 y b=5b=5.
+#         Por ejemplo, si el usuario introduce a=5 y b=3, al final a=3 y b=5.
 
 
 def obtener_numeros():

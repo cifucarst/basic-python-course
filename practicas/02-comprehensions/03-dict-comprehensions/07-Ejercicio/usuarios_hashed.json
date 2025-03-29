@@ -1,0 +1,30 @@
+{
+    "alice": {
+        "estado": "\u274c D\u00e9bil",
+        "sugerida": "kWUIrj3,ujPzj5}"
+    },
+    "bob": {
+        "estado": "\u274c D\u00e9bil",
+        "sugerida": "FT]7Wwlw&|87x9Q"
+    },
+    "charlie": {
+        "estado": "\u274c D\u00e9bil",
+        "sugerida": "Iomk(!~t`Qgad+D"
+    },
+    "dave": {
+        "estado": "\u2705 Segura",
+        "hash": "$2b$12$XsfZmDv4WdL0WhKYBHu/ve03U4BuLyvKTK270mbtm7z5ZH150vV6W"
+    },
+    "eve": {
+        "estado": "\u274c D\u00e9bil",
+        "sugerida": ")Fb\"2EitoMq+fI9"
+    },
+    "mallory": {
+        "estado": "\u274c D\u00e9bil",
+        "sugerida": "yqNu8`NL\"1c`4sf"
+    },
+    "oscar": {
+        "estado": "\u2705 Segura",
+        "hash": "$2b$12$5/68vAYf9iBZ0xGtI7rcser3tJTMsmzj7j28cjUT1B6T4M7apiKne"
+    }
+}

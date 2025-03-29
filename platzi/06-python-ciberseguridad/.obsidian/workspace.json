@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "2e89073bd31763a4",
+    "type": "split",
+    "children": [
+      {
+        "id": "0629cabcaba9ecf9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "faf36083710ba18c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-fundamentos.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01-fundamentos"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "98834149ef2b9381",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e1eb8836ae9d88c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e40be3479fba6a3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "0b5d1b8ef7a193af",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "24f17685a57d3bca",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "d2100404b9872220",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cd9eff15d223e9d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8e5e1692a1574f1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "10-Ejercicio.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de 10-Ejercicio"
+            }
+          },
+          {
+            "id": "aa9bea01cb541515",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "10-Ejercicio.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de 10-Ejercicio"
+            }
+          },
+          {
+            "id": "1a239c2b16e268d5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "49199ff588388a62",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "10-Ejercicio.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de 10-Ejercicio"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "faf36083710ba18c",
+  "lastOpenFiles": [
+    "17-Ejercicio.md",
+    "16-Ejercicio.md",
+    "15-Ejercicio.md",
+    "14-Ejercicio.md",
+    "13-Ejecicio.md",
+    "12-Métodos Estáticos y de Clase.md",
+    "11-Ejercicio.md",
+    "10-Ejercicio.md",
+    "09-Ejercicio.md",
+    "08-Polimorfismo.md",
+    "07-Ejercicio.md",
+    "06-Ejercicio.md",
+    "05-herencia.md",
+    "04-ejercicio.md",
+    "03-Ejercicio.md",
+    "02-Ejercicio.md",
+    "01-fundamentos.md"
+  ]
+}

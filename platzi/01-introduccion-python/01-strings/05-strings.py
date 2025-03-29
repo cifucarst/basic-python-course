@@ -14,4 +14,4 @@ def contar_vocales(texto):
     vocales = "aeiou"
     return sum(1 for letra in texto if letra in vocales)
 
-print(contar_vocales("Aprendiendo Python"))  # 7
+print(contar_vocales("Aprendiendo Python"))  # 6

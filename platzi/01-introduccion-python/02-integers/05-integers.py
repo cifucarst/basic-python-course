@@ -9,4 +9,3 @@ print(bin(a ^ b))  # 0b0110 (XOR)
 print(bin(~a))     # -0b1101 (NOT)
 print(bin(a << 2)) # 0b110000 (desplaza 2 bits a la izquierda)
 print(bin(a >> 2)) # 0b0011 (desplaza 2 bits a la derecha)
-

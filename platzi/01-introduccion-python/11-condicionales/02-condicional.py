@@ -4,8 +4,8 @@ y = 20
 
 if x > 5:
     if y > 15:
-        print("x es mayor que 5 e y es mayor que 15")
-# Salida: x es mayor que 5 e y es mayor que 15
+        print("x es mayor que 5, y es mayor que 15")
+# Salida: x es mayor que 5, y es mayor que 15
 
 
 

@@ -11,13 +11,13 @@ class Vehicle:
             self.is_available = False
             print(f"El vehiculo {self.brand}. Ha sido vendido")
         else:
-            print(f"El vehiculo {self.brand}. No estÃ¡ disponible")
+            print(f"El vehiculo {self.brand}. No esta¡ disponible")
     
     #Abstraccion
     def check_available(self):
         return self.is_available
     
-    #AbstracciÃ³n
+    #Abstraccion
     def get_price(self):
         return self.price
     
@@ -32,48 +32,48 @@ class Car(Vehicle):
     #Polimorfismo
     def start_engine(self):
         if not self.is_available:
-            return f"El motor del coche {self.brand} estÃ¡ en marcha"
+            return f"El motor del coche {self.brand} esta¡ en marcha"
         else:
-            return f"El coche {self.brand} no estÃ¡ disponible"
+            return f"El coche {self.brand} no esta¡ disponible"
     
     #Polimorfismo   
     def stop_engine(self):
         if self.is_available:
             return f"El motor del coche {self.brand} se ha detenido"
         else:
-            return f"El coche {self.brand} No estÃ¡ disponible"
+            return f"El coche {self.brand} No esta¡ disponible"
 
 #Herencia
 class Bike(Vehicle):
     #Polimorfismo
     def start_engine(self):
         if not self.is_available:
-            return f"La bicicleta {self.brand} estÃ¡ en marcha"
+            return f"La bicicleta {self.brand} esta¡ en marcha"
         else:
-            return f"La bicicleta {self.brand} no estÃ¡ disponible"
+            return f"La bicicleta {self.brand} no esta¡ disponible"
 
      #Polimorfismo   
     def stop_engine(self):
         if self.is_available:
             return f"La bicicleta {self.brand} se ha detenido"
         else:
-            return f"La bicicleta {self.brand} No estÃ¡ disponible"
+            return f"La bicicleta {self.brand} No esta¡ disponible"
 
 #Herencia
 class Truck(Vehicle):
     #Polimorfismo
     def start_engine(self):
         if not self.is_available:
-            return f"El motor del camiÃ³n {self.brand} estÃ¡ en marcha"
+            return f"El motor del camion {self.brand} esta¡ en marcha"
         else:
-            return f"El camiÃ³n {self.brand} no estÃ¡ disponible"
+            return f"El camion {self.brand} no esta¡ disponible"
     
     #Polimorfismo
     def stop_engine(self):
         if self.is_available:
-            return f"El motor del camiÃ³n {self.brand} se ha detenido"
+            return f"El motor del camion {self.brand} se ha detenido"
         else:
-            return f"El camiÃ³n {self.brand} No estÃ¡ disponible"
+            return f"El camion {self.brand} No esta¡ disponible"
         
 class Customer:
     def __init__(self, name):
@@ -85,14 +85,14 @@ class Customer:
             vehicle.sell()
             self.purchased_vehicles.append(vehicle)
         else:
-            print(f"Lo siento,{vehicle.brand} no estÃ¡ disponible")
+            print(f"Lo siento,{vehicle.brand} no esta¡ disponible")
 
     def inquire_vehicle(self, vehicle: Vehicle):
         if vehicle.check_available():
             availablity = "Disponible"
         else:
             availablity = "No disponible"
-        print(f"El {vehicle.brand} estÃ¡ {availablity} y cuesta {vehicle.get_price()}")
+        print(f"El {vehicle.brand} esta¡ {availablity} y cuesta {vehicle.get_price()}")
 
 class Dealership:
     def __init__(self):
@@ -101,11 +101,11 @@ class Dealership:
 
     def add_vehicles(self, vehicle: Vehicle):
         self.inventory.append(vehicle)
-        print(f"El {vehicle.brand} ha sido aÃ±adido al inventario")
+        print(f"El {vehicle.brand} ha sido anadido al inventario")
 
     def register_customers(self, customer: Customer):
         self.customers.append(customer)
-        print(f"El cliente {customer.name} ha sido aÃ±adido")
+        print(f"El cliente {customer.name} ha sido anadido")
 
     def show_available_vehicle(self):
         print("Vehiculos disponibles en la tienda")

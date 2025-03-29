@@ -13,7 +13,7 @@ set_c = set_a.intersection(set_b)
 print(set_a & set_b)  # {'bol'}
 
 
-# dejamos solo los conjuntos del conjunto a, esto es por que hace una resta
+# dejamos solo los elementos del conjunto a, esto es por que hace una resta
 set_c = set_a.difference(set_b)
 # o
 print(set_a - set_b) # {'col', 'mex'}
