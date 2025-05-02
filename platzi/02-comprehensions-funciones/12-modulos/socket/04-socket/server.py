@@ -3,6 +3,7 @@ import socket
 PASSWORD = "secreto123"
 
 def start_auth_server():
+    
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('0.0.0.0', 8888))
     server_socket.listen(5)

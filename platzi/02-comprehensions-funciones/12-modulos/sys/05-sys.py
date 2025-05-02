@@ -1,5 +1,6 @@
 # 5. sys.version y sys.version_info
-# sys.version devuelve la versión de Python como una cadena; sys.version_info devuelve una tupla con más detalles.
+# sys.version devuelve la versión de Python como una cadena; sys.version_info devuelve 
+# una tupla con más detalles.
 
 # Ejemplo práctico: Comprobar la versión de Python
 

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0629cabcaba9ecf9",
+        "id": "6152a7a23fbc0429",
         "type": "tabs",
         "children": [
           {
-            "id": "faf36083710ba18c",
+            "id": "6e25d0eca73810dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,9 +168,10 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "faf36083710ba18c",
+  "active": "6e25d0eca73810dc",
   "lastOpenFiles": [
     "17-Ejercicio.md",
+    "01-fundamentos.md",
     "16-Ejercicio.md",
     "15-Ejercicio.md",
     "14-Ejercicio.md",
@@ -185,7 +186,6 @@
     "05-herencia.md",
     "04-ejercicio.md",
     "03-Ejercicio.md",
-    "02-Ejercicio.md",
-    "01-fundamentos.md"
+    "02-Ejercicio.md"
   ]
 }

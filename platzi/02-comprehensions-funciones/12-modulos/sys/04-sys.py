@@ -7,6 +7,7 @@
 import sys
 
 platform = sys.platform
+
 if platform.startswith('win'):
     print("Estás en Windows.")
 elif platform.startswith('linux'):

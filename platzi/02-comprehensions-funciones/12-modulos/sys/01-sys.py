@@ -7,7 +7,8 @@ import sys
 
 
 # 1. sys.argv
-# Es una lista que contiene los argumentos pasados al script desde la línea de comandos. El primer elemento (sys.argv[0]) es el nombre del script.
+# Es una lista que contiene los argumentos pasados al script desde la línea de comandos. 
+# El primer elemento (sys.argv[0]) es el nombre del script.
 
 # Ejemplo práctico: Leer argumentos desde la terminal
 

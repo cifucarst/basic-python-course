@@ -1,8 +1,11 @@
 import socket
 
 def brute_force():
+
     passwords = ["12345", "admin", "secreto123", "root"]
+
     for password in passwords:
+        
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             client_socket.connect(('127.0.0.1', 8888))

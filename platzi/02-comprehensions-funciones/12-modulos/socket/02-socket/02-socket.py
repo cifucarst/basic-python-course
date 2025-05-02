@@ -1,7 +1,9 @@
 import socket
 
 def scan_ports(host, ports):
+
     print(f"Escaneando {host}...")
+
     for port in ports:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(1)  # Tiempo límite para cada intento

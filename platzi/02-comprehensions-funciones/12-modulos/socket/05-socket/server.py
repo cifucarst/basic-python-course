@@ -16,6 +16,7 @@ def is_ip_blocked(ip):
         return True
     return False
 
+
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('0.0.0.0', 9999))
@@ -28,11 +29,11 @@ def start_server():
         
         if is_ip_blocked(ip):
             print(f"IP bloqueada: {ip}")
-            client_socket.send(b'Acceso denegado. Su IP está bloqueada.\n'.encode('utf-8'))
+            client_socket.send('Acceso denegado. Su IP está bloqueada.\n'.encode('utf-8'))
             client_socket.close()
             continue
 
-        client_socket.send(b'Introduce la contraseña: '.encode('utf-8'))
+        client_socket.send('Introduce la contraseña: '.encode('utf-8'))
         password = client_socket.recv(1024).decode()
 
         if password == "secreto123":

@@ -1,5 +1,6 @@
 # 2. sys.exit()
-# Permite salir del programa con un código de estado. Por convención, un código 0 indica que el programa terminó correctamente; cualquier otro valor señala un error.
+# Permite salir del programa con un código de estado. Por convención, un código 0 indica
+#  que el programa terminó correctamente; cualquier otro valor señala un error.
 
 # Ejemplo práctico: Terminar el programa si no se cumplen condiciones
 
