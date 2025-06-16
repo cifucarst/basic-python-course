@@ -1,31 +1,4 @@
-# Sistema de Gestión de Vehículos
-
-# Crea un programa para gestionar un parque vehicular.
-# Requerimientos:
-
-#     Clase Vehicle:
-#         Atributos: license_plate, brand, model, is_available.
-#         Métodos:
-#             rent(): Marca el vehículo como no disponible.
-#             return_vehicle(): Marca el vehículo como disponible.
-
-#     Clase Fleet:
-#         Atributos: Lista de vehículos (vehicles).
-#         Métodos:
-#             add_vehicle(vehicle: Vehicle): Agrega un vehículo.
-#             list_available_vehicles(): Muestra los vehículos disponibles.
-#             find_vehicle(license_plate): Busca un vehículo por placa.
-#             rent_vehicle(license_plate): Permite rentar un vehículo.
-#             return_vehicle(license_plate): Permite devolver un vehículo.
-
-# Interfaz Interactiva:
-
-# Crea un menú que permita:
-
-#     Registrar vehículos en el sistema.
-#     Listar vehículos disponibles para renta.
-#     Rentar vehículos.
-#     Devolver vehículos.
+import json
 
 
 class Vehicle:
@@ -68,19 +41,19 @@ class Fleet:
 
     def __init__(self):
         self.vehicle_list = []
+        self.load_vehicles()
 
     def add_vehicle(self, vehicle: Vehicle): 
         if isinstance(vehicle, Vehicle):
             self.vehicle_list.append(vehicle)
             print(f"El Vehiculo de placas {vehicle.license_plate} ha sido agregado correctamente.")
-        else:
-            raise ValueError("Solo puedes agregar objetos de tipo Vehicle a la flota")
-    
-    def list_available_vehicles(self): 
-        print("Vehiculos en nuestra flota listos para ser rentados:")
-        if self.vehicle_list:
-            for vehicle in self.vehicle_list:
-                print(vehicle)
+            self.save_vehicles()
+
+    # def list_available_vehicles(self): 
+    #     print("Vehiculos en nuestra flota listos para ser rentados:")
+    #     if self.vehicle_list:
+    #         for vehicle in self.vehicle_list:
+    #             print(vehicle)
 
     def find_vehicle(self, license_plate):
         for vehicle in self.vehicle_list:
@@ -94,6 +67,7 @@ class Fleet:
         vehicle = self.find_vehicle(license_plate)
         if vehicle:
             vehicle.rent()
+            self.save_vehicles()
 
     def return_vehicle(self, license_plate):
         vehicle = self.find_vehicle(license_plate)
@@ -109,6 +83,38 @@ class Fleet:
         else:
             print("❌ No hay vehículos disponibles actualmente.")
 
+    def save_vehicles(self):
+        data = []
+        for v in self.vehicle_list:
+            data.append({
+                "license_plate": v.license_plate,
+                "brand": v.brand,
+                "year_model": v.year_model,
+                "is_available": v.is_available
+            })
+        with open("vehiculos.json", "w") as file:
+            json.dump(data, file, indent=4)
+        print("💾 Vehículos guardados correctamente.")
+
+    def load_vehicles(self):
+        try:
+            with open("vehiculos.json", "r") as file:
+                data = json.load(file)
+                for v in data:
+                    vehicle = Vehicle(v["license_plate"], v["brand"], v["year_model"], v["is_available"])
+                    self.vehicle_list.append(vehicle)
+            print("📁 Vehículos cargados desde el archivo.")
+        except FileNotFoundError:
+            print("⚠️ No se encontró un archivo de vehículos. Se iniciará una nueva flota.")
+
+    def remove_vehicle(self, license_plate):
+        vehicle = self.find_vehicle(license_plate)
+        if vehicle:
+            self.vehicle_list.remove(vehicle)
+            print(f"🗑️ Vehículo de placas {license_plate} eliminado correctamente.")
+            self.save_vehicles()
+
+
 
 def menu():
     flota = Fleet()
@@ -122,7 +128,8 @@ def menu():
               3 - Buscar vehiculo por placa
               4 - Tomar carros prestados
               5 - Devolver un carro.
-              6 - Salir
+              6 - Eliminar un vehículo
+              7 - Salir
               """)
         try:
             opcion = int(input('Escribe una opción: '))
@@ -146,6 +153,9 @@ def menu():
                 license_plate = input('Escribe la placa del vehículo que deseas devolver: ').lower()
                 flota.return_vehicle(license_plate)
             elif opcion == 6:
+                license_plate = input('Escribe la placa del vehículo que deseas eliminar: ').lower()
+                flota.remove_vehicle(license_plate)
+            elif opcion == 7:
                 print('Saliendo... ¡Gracias por utilizar nuestra flota de vehiculos!')
                 break
             else:
@@ -155,4 +165,4 @@ def menu():
 
 
 if __name__ == '__main__':
-    menu()         
+    menu()

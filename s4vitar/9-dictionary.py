@@ -31,7 +31,7 @@ print(my_dictionary)
 if "island" in my_dictionary:
     print("This key is in my dictionary")
 else:
-    print("This key is in the dictionary")
+    print("This key is not in the dictionary")
 
 #__________________________________________________________________
 

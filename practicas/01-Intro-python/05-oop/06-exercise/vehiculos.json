@@ -1,0 +1,14 @@
+[
+    {
+        "license_plate": "xwu11f",
+        "brand": "eco",
+        "year_model": 2025,
+        "is_available": true
+    },
+    {
+        "license_plate": "uxb34g",
+        "brand": "fz",
+        "year_model": 2022,
+        "is_available": true
+    }
+]

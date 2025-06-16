@@ -36,9 +36,9 @@ class Students:
             return f"\n[!] {name} is not old enough to be added to the list."
 
 
-Students.create_student("hackermate", 43)  # Prints "hackermate was added to the list of students."
-Students.create_student("S4vitar", 28)  # Prints "S4vitar was added to the list of students."
-Students.create_student("xerosec", 13)  # Prints "[!] xerosec is not old enough to be added to the list."
-Students.create_student("hackavis", 8)  # Prints "[!] hackavis is not old enough to be added to the list."
+print(Students.create_student("hackermate", 43))  # Prints "hackermate was added to the list of students."
+print(Students.create_student("S4vitar", 28))  # Prints "S4vitar was added to the list of students."
+print(Students.create_student("xerosec", 13))  # Prints "[!] xerosec is not old enough to be added to the list."
+print(Students.create_student("hackavis", 8))  # Prints "[!] hackavis is not old enough to be added to the list."
 
-print(Students.students)  # Prints [['hackermate', 43], ['S4vitar', 28]]
+# print(Students.students)

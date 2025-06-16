@@ -1,6 +1,6 @@
 # # Ejercicio 2: Invertir diccionario
 
-# # Escribe una función invertir_diccionario(dic) que tome un diccionario y retorne uno nuevo donde las claves sean los valores del original, y los valores sean listas de claves originales que tenían ese valor.
+# # Escribe una función invertir_diccionario(dict) que tome un diccionario y retorne uno nuevo donde las claves sean los valores del original, y los valores sean listas de claves originales que tenían ese valor.
 
 # # Ejemplo:
 salida = {1: ["a", "c"], 2: ["b"]}

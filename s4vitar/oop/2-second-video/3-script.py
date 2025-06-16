@@ -10,11 +10,6 @@ class Book():
         self.title = title
         self.author = author
         self.price = price
-
-    # Static method to determine if a book is a best seller based on total sales
-    @staticmethod
-    def is_best_seller(total_sales):
-        return total_sales > Book.bestseller_value
     
     # Static method to calculate price including VAT
     @staticmethod
